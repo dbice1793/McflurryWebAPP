@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free McFlurry</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url('icecream-closeup.jpg'); /* Replace with your close-up image */
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+
+        #download-button {
+            margin-top: 20px;
+            padding: 20px 40px;
+            font-size: 2em;
+            color: white;
+            background-color: #28a745; /* Green color */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #download-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Free Ice Cream</h1>
+    <button id="download-button" onclick="downloadRandomImage()">Download Free McFlurry</button>
+
+    <script>
+        function downloadRandomImage() {
+            // List of images in the folder
+            const images = ['image1.jpg', 'image2.jpg', 'image3.jpg']; // Add your image filenames here
+            const randomImage = images[Math.floor(Math.random() * images.length)];
+            const link = document.createElement('a');
+            link.href = 'images/' + randomImage;
+            link.download = randomImage;
+            link.click();
+        }
+    </script>
+</body>
+</html>
